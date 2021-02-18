@@ -1,8 +1,20 @@
+const val exitMenu: Int = 3
+
 fun main(args: Array<String>) {
-    println(texto())
+    var responseMenu: Int
+    do{
+        responseMenu = menu()
+        when(responseMenu){
+            1 -> println("Escogio 1")
+            2 -> println("Escogio 2")
+            3 -> println("Saliendo... \nGracias!")
+            else -> println("*** La opcion ingresada no es valida ***")
+        }
+    }while(!responseMenu.equals(exitMenu))
 }
 
-fun texto(): Int {
+
+fun menu(): Int {
     val responseNum : Int
     val menu ="""
     :: Bienvenido a Recipe Maker ::
