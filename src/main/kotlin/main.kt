@@ -31,9 +31,9 @@ fun main(args: Array<String>) {
         responseMenu = selectMenu()
         when(responseMenu){
             1 -> do {
-                    responseIngredient =selectIngredients()
+                    responseIngredient =makeRecipe()
                 }while (!responseIngredient.equals(exitIngredients))
-            2 -> println("Aun no puedes ver tus recetas, por favor intenta más tarde")
+            2 -> println(viewRecipe())
             3 -> println("Saliendo... \nGracias!")
             else -> println("*** La opcion ingresada no es valida ***")
         }
@@ -57,7 +57,7 @@ fun selectMenu(): Int {
     return responseNum
 }
 
-fun selectIngredients(): Int {
+fun makeRecipe(): Int {
     val responseNum : Int
 
     // print ingredients and read the answer
@@ -71,4 +71,8 @@ fun selectIngredients(): Int {
     }
 
     return responseNum
+}
+
+fun viewRecipe(): String {
+    return "Aun no puedes ver tus recetas, por favor intenta más tarde"
 }
